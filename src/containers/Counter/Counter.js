@@ -10,6 +10,10 @@ class Counter extends Component {
     counter: 0
   };
 
+  componentDidMount = () => {
+    console.log(this.props);
+  };
+
   counterChangedHandler = (action, value) => {
     switch (action) {
       case 'inc':
@@ -92,6 +96,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => {
+  console.log(dispatch);
+
   return {
     onIncrementCounter: () => dispatch(actionCreators.increment()),
     onDecrementCounter: () => dispatch(actionCreators.decrement()),
